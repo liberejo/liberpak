@@ -2,7 +2,7 @@ package org.liberejo.liberpak
 
 import com.badlogic.gdx.Gdx
 import org.kodein.di.Kodein
-import org.liberejo.api.plugin.plugin.LiberejoPlugin
+import org.liberejo.api.plugin.LiberejoPlugin
 import org.liberejo.launcher.DesktopLauncher
 
 class Liberpak(override val kodein: Kodein) : LiberejoPlugin() {

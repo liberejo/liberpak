@@ -17,12 +17,16 @@ repositories {
     mavenLocal()
     mavenCentral()
     jcenter()
+
+    // temporary fix
+    maven { url = uri("https://dl.bintray.com/kodein-framework/Kodein-DI") }
 }
 
 dependencies {
     implementation("org.liberejo:launcher:0.1.0-SNAPSHOT")
     implementation("org.liberejo:api:0.1.0-SNAPSHOT")
     testCompile("junit", "junit", "4.12")
+    implementation(kotlin("stdlib-jdk8"))
 }
 
 configure<JavaPluginConvention> {
@@ -30,4 +34,12 @@ configure<JavaPluginConvention> {
 }
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
+}
+val compileKotlin: KotlinCompile by tasks
+compileKotlin.kotlinOptions {
+    jvmTarget = "1.8"
+}
+val compileTestKotlin: KotlinCompile by tasks
+compileTestKotlin.kotlinOptions {
+    jvmTarget = "1.8"
 }
